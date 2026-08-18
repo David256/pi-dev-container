@@ -21,11 +21,7 @@ else
     PI_DIR=.pi
 fi
 
-PROJECT_DIR="$(realpath "$WORKDIR")"
-PROJECT="$(basename "$PROJECT_DIR")"
-
 docker run --rm -it \
-    -e PROJECT="$PROJECT" \
-    -v "$PI_DIR:/home/developer/.pi" \
-    -v "$WORKDIR:/home/developer/source" \
+    -v "$PI_DIR:/home/bun/.pi" \
+    -v "$WORKDIR:/home/bun/source" \
     support:latest
